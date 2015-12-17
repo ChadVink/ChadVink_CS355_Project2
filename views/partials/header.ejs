@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Management Systems Project 2 </title>
+    <link rel="stylesheet" href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-multiselect.css" type="text/css"/>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-multiselect.js"></script>
+
+</head>
+<body style="padding-bottom: 100px">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation" class="active"><a href="/skateCompany/all">Skate Companies</a></li>
+        <li role="presentation" class="active"><a href="/skater/all">Skaters</a></li>
+        <li role="presentation" class="active"><a href="/video/all">Videos</a></li>
+        <li role="presentation" class="active"><a href="/account">My Account</a></li>
+    </ul>
+</nav>
+
+<script>
+    console.log($('.nav.nav-tabs > li'));
+//    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+//        var target = $(e.target).attr("href") // activated tab
+//        alert(target);
+//        console.log(target);
+//    });
+//$('.nav.nav-tabs > li').on('click', function(e) {
+//    $('.nav.nav-tabs > li').removeClass('active');
+//    $(this).addClass('active');
+//});
+</script>
+
+<div id="headerBanner">
+    <h1 style="color:white; margin:0px"> Skaterbase </h1>
+    <p id="userWelcome">
+    <% if(typeof firstName !== "undefined") { %>
+            Welcome, <%= firstName %>!  <span><a href="/logout">(logout)</a></span>
+    <% } else { %>
+            You are not logged in <span><a href="/login">login</a></span> here.
+            New user? <span><a href="/signup">Create new account</a></span>
+    <% } %>
+    </p>
+
+</div>
+
+

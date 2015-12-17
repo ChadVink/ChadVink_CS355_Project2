@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#skateCompany_dropdown').multiselect({
+            nonSelectedText: 'Select Sponsors',
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            maxHeight: 200
+        });
+    });
+</script>
+
+<form action="./save/" id="insertSkater">
+
+    <label for="skater[firstName]">First Name</label> <input type="text" id="firstName" name="skater[firstName]" /><br />
+    <label for="skater[lastName]">Last Name</label> <input type="text" id="lastName" name="skater[lastName]" /><br />
+    <label for="skater[sponcerStatus]">Sponsor Status</label> <input type="text" id="sponcerStatus" name="skater[sponcerStatus]" /><br />
+    <label for="skater[age]">Age</label> <input type="text" id="age" name="skater[age]" /><br />
+
+    <% if(skateCompany.length > 0) { %>
+        <!-- Build your select: -->
+        <select id="skateCompany_dropdown" name="sponcer[]" multiple="multiple">
+
+            <% for (var i=0; skateCompany.length > i; i++) { %>
+            <option value="<%= skateCompany[i].companyID%>"><%= skateCompany[i].companyName%></option>
+            <% } %>
+
+        </select>
+    <% } %>
+
+    <input id='submitButton' type="submit" />
+</form>
+
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+<div>
+    <% if(rs.length > 0) { %>
+    <table class="table table-hover table-condensed" border="1" style="width:25%;">
+        <tr><th>Skate Companies</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/skateCompany/?companyID=<%= rs[i].companyID %>"> <%= rs[i].companyName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No companies in the database.
+    <% } %>
+
+</div>
+<div>
+    <a href="/skateCompany/create">Add New Skate Company</a>
+</div>
+
+<% include ../partials/footer.ejs %>
+

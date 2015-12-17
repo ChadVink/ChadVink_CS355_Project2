@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div id="message" style="display: none">this div is hidden</div>
+
+<form id="userFormCreate" action="/save">
+
+    <label for="firstName">First Name</label> <input type="text" id="firstName" name="firstName" /><br />
+    <label for="lastName">Last Name</label> <input type="text" id="lastName" name="lastName" /><br />
+    <label for="email">Email</label> <input type="text" id="email" name="email" /><br />
+    <label for="password">Password</label> <input type="password" id="password" name="password" /><br />
+    <label for="foundby">How did you hear about us?</label><br />
+    <!--<select id="foundby_id" name="foundby_id"></select>-->
+    <div id="foundbyOptions"></div>
+
+    <label for="bio">About Me</label><br />
+    <textarea id="bio" name="bio" style="width:400px;height:150px"></textarea>   <br/>
+    <!--<div class="dropdown">-->
+        <!--<label for="foundBy">How did you hear about us?</label><br />-->
+        <!--<select id="foundby_id" name="foundby_id" class="form-control"></select>-->
+    <!--</div>-->
+    <input type="submit" />
+</form>
+
+
+
+
+<script src="javascripts/foundby.js"></script>
+<script src="javascripts/userFormCreate.js"></script>
+
+<% include ../partials/footer %>
+

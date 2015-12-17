@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+<% if(user.length > 0) { %>
+<h3>
+    Welcome to <%= user[0].firstName %> <%= user[0].lastName %>'s account!
+</h3>
+<br/>
+
+<h4>
+    Bio:
+</h4>
+<div style="border: ridge; width: 350px;">
+    <p>
+        <%= user[0].bio %> %>
+    </p>
+</div>
+
+<%}%>
+
+<% if(foundby.length > 0) {%>
+    <p> Thank you for finding us by
+    <% for(var i = 0; i < foundby.length; i++){%>
+        <%= foundby[i].foundby%>,
+    <%}%>
+     and have a great day!</p>
+<%}%>
+
+
+
+<% include ../partials/footer.ejs %>

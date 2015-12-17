@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+<% if(data.company.length > 0) { %>
+    <h3>
+        <%= data.company[0].companyName %>
+    </h3>
+
+    <p>
+        Found: <%= data.company[0].founder %>, <%= data.company[0].foundDate %>
+    </p>
+<%} else { %>
+    <h3>
+        No Company found.
+    </h3>
+<%}%>
+<div>
+    <% if(data.sponcer.length > 0) { %>
+    <table border="1">
+        <tr><th>Sponsored Skaters</th></tr>
+        <% for (var i=0; data.sponcer.length > i; i++) { %>
+        <tr>
+            <td><a href="/skater/?skaterID=<%= data.sponcer[i].skaterID %>"> <%= data.sponcer[i].firstName %> <%= data.sponcer[i].lastName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No skaters skate for this company yet.
+    <% } %>
+</div>
+
+<% include ../partials/footer.ejs %>

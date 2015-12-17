@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+<div>
+    <% if(rs.length > 0) { %>
+    <table class="table table-hover table-condensed" border="1" style="width:auto">
+        <tr><th>Video</th><th>Company</th><th>Release Year</th><th>Length</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td> <a href="/video/?videoName=<%=rs[i].videoName%>&companyID=<%=rs[i].companyID%>"> <%= rs[i].videoName %> </a> </td>
+            <td> <a href="/skateCompany/?companyID=<%=rs[i].companyID%>"> <%= rs[i].companyName %> </a> </td>
+            <td>  <%= rs[i].releaseYear %>  </td>
+            <td> <%= rs[i].duration_minutes %> </td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No.
+    <% } %>
+</div>
+
+<div>
+    <!--<a href="/skater/create">Add New Skater</a>-->
+</div>
+
+<% include ../partials/footer.ejs %>
+

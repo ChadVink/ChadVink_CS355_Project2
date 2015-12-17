@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<% if(data.length > 0) { %>
+<h3>
+    <%= data[0].videoName %>
+</h3>
+
+<p>
+    Made by: <%= data[0].companyName %>, <%= data[0].releaseYear %> <br/>
+    Length: <%= data[0].duration_minutes %> minutes
+</p>
+
+<%}%>
+
+<div>
+<% if( data.length > 0) {%>
+    <table border="1">
+        <tr><th>Skaters in the video</th></tr>
+        <% for (var i=0; data.length > i; i++) { %>
+        <tr>
+            <td><a href="/skater/?skaterID=<%= data[i].skaterID %>"> <%= data[i].firstName %> <%= data[i].lastName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <%} else { %>
+    No skaters from database in video.
+    <%}%>
+</div>
+
+
+
+<% include ../partials/footer.ejs %>

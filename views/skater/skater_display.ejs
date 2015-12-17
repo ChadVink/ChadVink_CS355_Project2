@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<% if(data.skater.length > 0) { %>
+<h3>
+    <%= data.skater[0].firstName %> <%= data.skater[0].lastName %>
+</h3>
+
+<p>
+    Status: <%= data.skater[0].sponcerStatus %>, Age:<%= data.skater[0].age %>
+</p>
+
+<%}%>
+
+
+<% if( data.sponcer.length > 0) {%>
+
+<div>
+    <table border="1">
+        <tr><th>Sponcered By</th></tr>
+        <% for (var i=0; data.sponcer.length > i; i++) { %>
+        <tr>
+            <td><a href="/skateCompany/?companyID=<%= data.sponcer[i].companyID %>"> <%= data.sponcer[i].companyName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+<%} else { %>
+    Not sponsored by any companies.
+<%}%>
+</div>
+
+
+<% include ../partials/footer.ejs %>

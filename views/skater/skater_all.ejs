@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+<div>
+    <% if(rs.length > 0) { %>
+    <table class="table table-hover table-condensed" border="1" style="width:25%">
+        <tr><th>Skaters</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/skater/?skaterID=<%= rs[i].skaterID %>"> <%= rs[i].firstName %> <%= rs[i].lastName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No skaters in the database.
+    <% } %>
+</div>
+
+<div>
+<a href="/skater/create">Add New Skater</a>
+</div>
+
+<% include ../partials/footer.ejs %>
+
